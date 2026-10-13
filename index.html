@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery Ảnh Responsive - Bootstrap Grid</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* ============================================
+           CUSTOM CSS - Tùy chỉnh nhẹ
+           ============================================ */
+        body {
+            background-color: #f4f6f9;
+            padding: 30px 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1a2a4a;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        /* Card ảnh */
+        .gallery-item {
+            background-color: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-caption {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .gallery-caption h5 {
+            color: #1a2a4a;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .gallery-caption p {
+            color: #888;
+            font-size: 13px;
+            margin: 0;
+        }
+
+        /* Badge responsive indicator */
+        .responsive-info {
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .responsive-info span {
+            display: inline-block;
+            padding: 5px 15px;
+            margin: 5px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .badge-desktop { background-color: #e3f2fd; color: #1976d2; }
+        .badge-tablet { background-color: #fff3e0; color: #e65100; }
+        .badge-mobile { background-color: #e8f5e9; color: #2e7d32; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- ============================================
+             TIÊU ĐỀ
+             ============================================ -->
+        <h1>📸 Gallery Ảnh Responsive</h1>
+        <p class="subtitle">Sử dụng Bootstrap Grid System - Tự động điều chỉnh theo màn hình</p>
+
+        <!-- ============================================
+             GALLERY - Bootstrap Grid
+             col-12 : Mobile (1 ảnh/dòng)
+             col-sm-6 : Tablet (2 ảnh/dòng)
+             col-lg-3 : Desktop (4 ảnh/dòng)
+             ============================================ -->
+        <div class="row g-4">
+
+            <!-- Ảnh 1 -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/id/1015/600/400" alt="Phong cảnh núi">
+                    <div class="gallery-caption">
+                        <h5>Phong cảnh núi</h5>
+                        <p>Đà Lạt, Việt Nam</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ảnh 2 -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/id/1016/600/400" alt="Hồ nước">
+                    <div class="gallery-caption">
+                        <h5>Hồ nước yên bình</h5>
+                        <p>Hồ Tây, Hà Nội</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ảnh 3 -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/id/1018/600/400" alt="Rừng xanh">
+                    <div class="gallery-caption">
+                        <h5>Rừng xanh</h5>
+                        <p>Cúc Phương, Ninh Bình</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ảnh 4 -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/id/1019/600/400" alt="Bãi biển">
+                    <div class="gallery-caption">
+                        <h5>Bãi biển cát trắng</h5>
+                        <p>Nha Trang, Khánh Hòa</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ảnh 5 -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/id/1020/600/400" alt="Thác nước">
+                    <div class="gallery-caption">
+                        <h5>Thác nước hùng vĩ</h5>
+                        <p>Bản Giốc, Cao Bằng</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ảnh 6 -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/id/1021/600/400" alt="Đồi cỏ">
+                    <div class="gallery-caption">
+                        <h5>Đồi cỏ xanh mướt</h5>
+                        <p>Mộc Châu, Sơn La</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ảnh 7 -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/id/1022/600/400" alt="Sa mạc">
+                    <div class="gallery-caption">
+                        <h5>Đồi cát vàng</h5>
+                        <p>Mũi Né, Bình Thuận</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ảnh 8 -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/id/1023/600/400" alt="Núi tuyết">
+                    <div class="gallery-caption">
+                        <h5>Núi tuyết phủ trắng</h5>
+                        <p>Sa Pa, Lào Cai</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ============================================
+             RESPONSIVE INFO - Thông tin breakpoint
+             ============================================ -->
+        <div class="responsive-info">
+            <span class="badge-desktop">🖥️ Desktop (≥ 992px): col-lg-3 → 4 ảnh/dòng</span>
+            <span class="badge-tablet">📱 Tablet (≥ 576px): col-sm-6 → 2 ảnh/dòng</span>
+            <span class="badge-mobile">📱 Mobile (&lt; 576px): col-12 → 1 ảnh/dòng</span>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap JS (tùy chọn) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
